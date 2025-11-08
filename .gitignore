@@ -1,24 +1,69 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ──────────────────────────────
+# 🌿 Node / React / Vite project
+# ──────────────────────────────
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Dependencies
+node_modules/
 
-# testing
-/coverage
+# Build output
+dist/
+build/
 
-# production
-/build
-
-# misc
-.DS_Store
+# Environment files (never commit secrets)
 .env
+.env.*.local
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.production
+.env.development
 
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE & editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS metadata (OneDrive temp & recycle)
+~$*
+*.tmp
+desktop.ini
+
+# Coverage / test
+coverage/
+*.lcov
+
+# Optional caches
+.cache/
+*.tgz
+*.lock-wscript
+
+# TensorFlow / model artifacts (optional — keep only what you need)
+*.tflite
+*.h5
+*.onnx
+*.weights
+*.ckpt
+*.pb
+*.npz
+
+# Local environment folders
+venv/
+env/
+__pycache__/
+
+# Temporary files
+*.swp
+*.bak
+*.old
+*.orig

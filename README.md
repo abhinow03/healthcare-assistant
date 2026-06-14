@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Healthcare Assistant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React health assistant prototype with chat-style interaction, profile context, health dashboard components, and an in-browser TensorFlow.js heart-risk model.
 
-## Available Scripts
+> Portfolio positioning: secondary AI/health UI prototype. Do not pin unless the README, model card, and safety disclaimers are improved.
 
-In the project directory, you can run:
+## Why This Project Matters
 
-### `npm start`
+Healthcare AI projects need more than a chatbot interface. They must communicate model limitations, data handling, user context, and safety boundaries clearly. This repo can be repositioned as an applied human-centered AI prototype if it documents the prediction model and avoids medical overclaiming.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Capability | Description |
+|---|---|
+| Chat interface | Conversational health-assistant UI. |
+| Profile context | Stores user profile information in React context. |
+| Health dashboard | Displays health-related state and quick actions. |
+| Heart-risk predictor | Loads a TensorFlow.js model from `public/models`. |
+| Settings | User-facing configuration surface. |
 
-### `npm test`
+## System Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```mermaid
+flowchart TD
+    A["React app"] --> B["Chat interface"]
+    A --> C["Health dashboard"]
+    A --> D["User profile context"]
+    A --> E["Health data context"]
+    B --> F["Chat context"]
+    C --> G["HeartIssuePredictor"]
+    G --> H["TensorFlow.js model files"]
+```
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Layer | Tools |
+|---|---|
+| Frontend | React, JavaScript |
+| Styling | CSS, Tailwind config |
+| ML runtime | TensorFlow.js model assets |
+| Testing | React test setup |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+npm start
+```
 
-### `npm run eject`
+Open:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```text
+http://localhost:3000
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Safety Note
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project is a prototype and must not be presented as a medical device, diagnostic system, or replacement for professional care. Add a model card before making strong claims about prediction quality.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Demo
 
-## Learn More
+Add:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```text
+docs/demo/chat-flow.gif
+docs/demo/heart-risk-predictor.png
+docs/demo/dashboard.png
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Folder Structure
 
-### Code Splitting
+```text
+healthcare-assistant/
+├── public/
+│   └── models/
+│       └── heart_issue_model/
+├── src/
+│   ├── components/
+│   ├── context/
+│   ├── utils/
+│   ├── App.js
+│   └── model.js
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Future Improvements
 
-### Analyzing the Bundle Size
+- Add `MODEL_CARD.md` with dataset, inputs, outputs, limitations, and evaluation metrics.
+- Add explicit privacy and safety documentation.
+- Add form validation and uncertainty display around predictions.
+- Add tests for model loading failure paths.
+- Replace Create React App template remnants with project-specific docs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Recommended: MIT for UI code. Confirm licensing for any model or dataset used.
